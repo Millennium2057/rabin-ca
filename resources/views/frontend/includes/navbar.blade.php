@@ -50,10 +50,10 @@
               <li class="dropdown"><a href="#"><span>Calculator</span> <i
                     class="bi bi-chevron-down dropdown-indicator"></i></a>
                 <ul>
-                  <li><a href="#">EMI calculator</a></li>
-                  <li><a href="#">Tax Calculator</a></li>
-                  <li><a href="#">Tax Rates</a></li>
-                  <li><a href="#">Date Calculator</a></li>
+                  <li><a href="{{route('emicalculator')}}">EMI calculator</a></li>
+                  <li><a href="{{route('taxcalculator')}}">Tax Calculator</a></li>
+                  <li><a href="{{route('taxrates')}}">Tax Rates</a></li>
+                  <li><a href="{{route('datecalculator')}}">Date Calculator</a></li>
 
                 </ul>
               </li>

@@ -66,4 +66,21 @@ class HomeController extends Controller
         return view('frontend.pages.contactus');
     }
 
+    public function emicalculator(){
+        return view('frontend.pages.emicalculator');
+    }
+
+    public function taxcalculator(){
+        return view('frontend.pages.taxcalculator');
+    }
+
+    public function taxrates(){
+        return view('frontend.pages.taxrates');
+    }
+
+    public function datecalculator(){
+        return view('frontend.pages.datecalculator');
+    }
+
+
 }

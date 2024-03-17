@@ -27,7 +27,7 @@
   <link href="{{asset('frontend/assets/vendor/aos/aos.css')}}" rel="stylesheet">
   <link href="{{asset('frontend/assets/vendor/glightbox/css/glightbox.min.css')}}" rel="stylesheet">
   <link href="{{asset('frontend/assets/vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
-
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Template Main CSS File -->
   <link href="{{asset('frontend/assets/css/main.css')}}" rel="stylesheet">
 

@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-// HomeController 
+// HomeController
 Route::get('/',[HomeController::class,'index'])->name('index');
 Route::get('/about',[HomeController::class,'about'])->name('about');
 Route::get('/act',[HomeController::class,'act'])->name('act');
@@ -23,6 +23,13 @@ Route::get('/CAREER/Jobs-At-Robin/Contact',[HomeController::class,'contact'])->n
 Route::get('/blog',[HomeController::class,'blog'])->name('blog');
 Route::get('/training',[HomeController::class,'training'])->name('training');
 Route::get('/contactus',[HomeController::class,'contactus'])->name('contactus');
+Route::get('/TOOLS/Calculator/EMIcalculator',[HomeController::class,'emicalculator'])->name('emicalculator');
+Route::get('/TOOLS/Calculator/TaxCalculator',[HomeController::class,'taxcalculator'])->name('taxcalculator');
+Route::get('/TOOLS/Calculator/Tax-Rates',[HomeController::class,'taxrates'])->name('taxrates');
+Route::get('/TOOLS/Calculator/Date-Calculator',[HomeController::class,'datecalculator'])->name('datecalculator');
+
+
+
 
 
 
