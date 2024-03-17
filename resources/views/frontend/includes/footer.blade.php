@@ -9,12 +9,12 @@
             <div class="footer-info">
               <a href="{{route('index')}}" class="logo d-flex align-items-center">
                 <!-- Uncomment the line below if you also wish to use an image logo -->
-                <img src="{{asset('frontend/assets/img/logo.png')}}" alt="" style="width: 200px; height: 200px;">
+                <img src="{{asset('frontend/assets/img/logo.png')}}" alt="" style="width: 200px; height: 120px;">
                 <!-- <h1>UpConstruction<span>.</span></h1> -->
               </a>
               <p>
                 Itahari, Sunsari <br><br>
-                <strong>Phone:</strong> +1 5589 55488 55<br>
+                <strong>Phone:</strong> +977 9851232718<br>
                 <strong>Email:</strong> info@example.com<br>
               </p>
               <div class="social-links d-flex mt-3">

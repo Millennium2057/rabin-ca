@@ -23,7 +23,7 @@
           <div class="info-item  d-flex flex-column justify-content-center align-items-center">
             <i class="bi bi-map"></i>
             <h3>Our Address</h3>
-            <p>A108 Adam Street, New York, NY 535022</p>
+            <p>Itahari,Sunsari</p>
           </div>
         </div><!-- End Info Item -->
 
@@ -31,7 +31,7 @@
           <div class="info-item d-flex flex-column justify-content-center align-items-center">
             <i class="bi bi-envelope"></i>
             <h3>Email Us</h3>
-            <p>contact@example.com</p>
+            <p>info@example.com</p>
           </div>
         </div><!-- End Info Item -->
 
@@ -39,7 +39,7 @@
           <div class="info-item  d-flex flex-column justify-content-center align-items-center">
             <i class="bi bi-telephone"></i>
             <h3>Call Us</h3>
-            <p>+1 5589 55488 55</p>
+            <p>+977 9851232718</p>
           </div>
         </div><!-- End Info Item -->
 

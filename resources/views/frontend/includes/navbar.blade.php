@@ -45,6 +45,27 @@
               <li><a href="{{route('otherjob')}}">Other Job</a></li>
             </ul>
           </li>
+          <li class="dropdown"><a href="#"><span>Tools</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li class="dropdown"><a href="#"><span>Calculator</span> <i
+                    class="bi bi-chevron-down dropdown-indicator"></i></a>
+                <ul>
+                  <li><a href="#">EMI calculator</a></li>
+                  <li><a href="#">Tax Calculator</a></li>
+                  <li><a href="#">Tax Rates</a></li>
+                  <li><a href="#">Date Calculator</a></li>
+
+                </ul>
+              </li>
+              <li class="dropdown"><a href="#"><span>Fonts</span> <i
+                class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="{{route('contact')}}">Nepali Fonts</a></li>
+              <li><a href="#">English Fonts</a></li>
+            </ul>
+          </li>
+            </ul>
+          </li>
           <li><a href="{{ route('blog') }} "  class="{{ request()->routeIs('blog') ? 'active' : '' }}">Blog</a></li>
           <li><a href="{{ route('training') }} "  class="{{ request()->routeIs('training') ? 'active' : '' }}">Training</a></li>
           <li><a href="{{ route('contactus') }} "  class="{{ request()->routeIs('contactus') ? 'active' : '' }}">Contact Us</a></li>
