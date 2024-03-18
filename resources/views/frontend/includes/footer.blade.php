@@ -9,7 +9,7 @@
             <div class="footer-info">
               <a href="{{route('index')}}" class="logo d-flex align-items-center">
                 <!-- Uncomment the line below if you also wish to use an image logo -->
-                <img src="{{asset('frontend/assets/img/logo.png')}}" alt="" style="width: 200px; height: 120px;">
+                <img src="{{asset('frontend/assets/img/logo.png')}}" alt="" style="width: 200px;  object-fit:contain;">
                 <!-- <h1>UpConstruction<span>.</span></h1> -->
               </a>
               <p>
@@ -91,6 +91,10 @@
   <script src="{{asset('frontend/assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
   <script src="{{asset('frontend/assets/vendor/purecounter/purecounter_vanilla.js')}}"></script>
   <script src="{{asset('frontend/assets/vendor/php-email-form/validate.js')}}"></script>
-
+  {{-- emi calculator --}}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.2/bootstrap-slider.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <!-- Template Main JS File -->
   <script src="{{asset('frontend/assets/js/main.js')}}"></script>

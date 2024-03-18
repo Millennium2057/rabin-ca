@@ -1,85 +1,27 @@
 @extends('frontend.includes.app')
-
 @section('main-content')
-    <!-- ======= Breadcrumbs ======= -->
-    <div class="breadcrumbs d-flex align-items-center"
-        style="background-image: url('{{ asset('frontend/assets/img/emi-calculator.jpg') }}');">
-        <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
+<!-- ======= Breadcrumbs ======= -->
+<div class="breadcrumbs d-flex align-items-center" style="background-image: url('{{asset('frontend/assets/img/breadcrumbs-bg.jpg')}}');">
+    <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
+        <h2 style="color: #fff;">EMI CALCULATOR</h2>
+        <ol>
+            <li><a href="{{route('index')}}" style="color: #fff;">Home</a></li>
+            <li><span style="color: #fff;">TOOLS</span></li>
+            <li><span style="color: #fff;">CALCULATOR</span></li>
+            <li><span style="color: #fff;">EMI Calculator</span></li>
+        </ol>
+    </div>
+</div>
+<!-- End Breadcrumbs -->
 
-            <h2>EMI Calculator</h2>
-            <ol>
-                <li><a href="{{ route('index') }}">Home</a></li>
-                <li>TOOLS</li>
-                <li>Calculator</li>
-                <li>EMI Calculator</li>
-            </ol>
-
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 p-5">
+            <script src="https://emicalculator.net/widget/2.0/js/emicalc-loader.min.js" type="text/javascript"></script><div id="ecww-widgetwrapper" style="min-width:250px;width:100%;"><div id="ecww-widget" style="position:relative;padding-top:0;padding-bottom:280px;height:0;overflow:hidden;"></div><div id="ecww-more" style="background:#333;font:normal 13px/1 Helvetica, Arial, Verdana, Sans-serif;padding:10px 0;color:#FFF;text-align:center;width:100%;clear:both;margin:0;clear:both;float:left;"><a style="background:#333;color:#FFF;text-decoration:none;border-bottom:1px dotted #ccc;"  title="Loan EMI Calculator" rel="nofollow" target="_blank"></a></div></div><!-- EMI Calculator Widget END -->
         </div>
     </div>
-    <!-- End Breadcrumbs -->
+</div>
 
-    <div class="container" style="margin-top: 50px;">
-        <div class="calculator-container"
-            style="background-color: #f8f9fa; border-radius: 10px; padding: 30px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);">
 
-            <h1 style="color: #007bff; text-align: center; margin-bottom: 30px;">EMI Calculator</h1>
 
-            <div class="row justify-content-center">
-                <div class="col-md-6">
-                    <div class="mb-3">
-                        <label for="loanAmount" style="font-weight: bold; color: #495057;">Loan Amount (NPR)</label>
-                        <input type="number" class="form-control" id="loanAmount"
-                            placeholder="Enter loan amount">
-                    </div>
-                    <div class="mb-3">
-                        <label for="interestRate" style="font-weight: bold; color: #495057;">Interest Rate (%)</label>
-                        <input type="number" class="form-control" id="interestRate"
-                            placeholder="Enter interest rate">
-                    </div>
-                    <div class="mb-3">
-                        <label for="loanTenure" style="font-weight: bold; color: #495057;">Loan Tenure (months)</label>
-                        <input type="number" class="form-control" id="loanTenure"
-                            placeholder="Enter loan tenure">
-                    </div>
-                    <button type="button" class="btn btn-primary btn-block"
-                        style="background-color: #007bff; border-color: #007bff; color: #fff; transition: background-color 0.3s ease;"
-                        onclick="calculateEMI()">Calculate EMI</button>
-                </div>
-            </div>
-
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <div class="result"
-                        style="background-color: #fff; border-radius: 10px; padding: 20px; margin-top: 30px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);">
-
-                        <h3 style="color: #007bff; margin-top: 15px;">EMI: <span
-                                id="emiAmount" style="color: #495057; font-weight: bold;"></span></h3>
-                        <h4 style="color: #007bff; margin-top: 15px;">Total Payment: <span
-                                id="totalPayment" style="color: #495057; font-weight: bold;"></span></h4>
-                        <h4 style="color: #007bff; margin-top: 15px;">Total Interest: <span
-                                id="totalInterest" style="color: #495057; font-weight: bold;"></span></h4>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <script>
-        function calculateEMI() {
-            let loanAmount = document.getElementById('loanAmount').value;
-            let interestRate = document.getElementById('interestRate').value / 100 / 12; // Monthly interest rate
-            let loanTenure = document.getElementById('loanTenure').value;
-
-            let emi = (loanAmount * interestRate * Math.pow(1 + interestRate, loanTenure)) / (Math.pow(1 + interestRate,
-                loanTenure) - 1);
-            let totalPayment = emi * loanTenure;
-            let totalInterest = totalPayment - loanAmount;
-
-            document.getElementById('emiAmount').textContent = 'NPR ' + emi.toFixed(2);
-            document.getElementById('totalPayment').textContent = 'NPR ' + totalPayment.toFixed(2);
-            document.getElementById('totalInterest').textContent = 'NPR ' + totalInterest.toFixed(2);
-
-        }
-    </script>
 @endsection

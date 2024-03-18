@@ -4,7 +4,7 @@
 
       <a href="{{route('index')}}" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="{{asset('frontend/assets/img/logo.png')}}" alt="" style="width: 120px;">
+        <img src="{{asset('frontend/assets/img/logo.png')}}" alt="" style=" width:100px; object-fit: contain;">
         <!-- <h1>UpConstruction<span>.</span></h1> -->
       </a>
 

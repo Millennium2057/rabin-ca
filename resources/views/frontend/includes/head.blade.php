@@ -31,4 +31,8 @@
   <!-- Template Main CSS File -->
   <link href="{{asset('frontend/assets/css/main.css')}}" rel="stylesheet">
 
+{{-- emi calulator --}}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.2/css/bootstrap-slider.min.css">
+
 </head>

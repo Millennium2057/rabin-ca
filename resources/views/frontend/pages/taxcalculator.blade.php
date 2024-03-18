@@ -1,6 +1,5 @@
 @extends('frontend.includes.app')
 @section('main-content')
-
 <!-- ======= Breadcrumbs ======= -->
 <div class="breadcrumbs d-flex align-items-center" style="background-image: url('{{asset('frontend/assets/img/breadcrumbs-bg.jpg')}}');">
     <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
@@ -14,8 +13,8 @@
         </ol>
 
     </div>
-</div><!-- End Breadcrumbs -->
-
+</div>
+<!-- End Breadcrumbs -->
 <body style="background-color: #f8f9fa;">
     <div class="container mt-5">
         <h1 class="text-center mb-4" style="color: #007bff;">Tax Calculator</h1>
@@ -57,5 +56,4 @@
         }
     </script>
 </body>
-
 @endsection
