@@ -48,10 +48,9 @@
       <div class="row gy-4 mt-1">
 
         <div class="col-lg-6 ">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621"
-            frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
-        </div><!-- End Google Maps -->
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d114095.86040772172!2d87.2717714!3d26.664626500000008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2snp!4v1710737579104!5m2!1sen!2snp" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" frameborder="0" style="border:0; width: 100%; height: 384px;"></iframe>
+          </div><!-- End Google Maps -->
 
         <div class="col-lg-6">
           <form action="forms/contact.php" method="post" role="form" class="php-email-form">
