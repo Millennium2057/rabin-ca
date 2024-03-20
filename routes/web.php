@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -32,6 +33,9 @@ Route::get('/TOOLS/Calculator/Date-Calculator',[HomeController::class,'datecalcu
 
 
 
+//admin route
+
+Route::get('/index',[AdminController::class,'index'])->name('backend.index');
 
 
 
