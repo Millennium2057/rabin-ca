@@ -21,6 +21,7 @@ Route::get('/finance',[HomeController::class,'finance'])->name('finance');
 Route::get('/otherjob',[HomeController::class,'otherjob'])->name('otherjob');
 Route::get('/CAREER/Jobs-At-Robin/Contact',[HomeController::class,'contact'])->name('contact');
 Route::get('/blog',[HomeController::class,'blog'])->name('blog');
+Route::get('/blogsdetail',[HomeController::class,'blogsdetail'])->name('blogsdetail');
 Route::get('/training',[HomeController::class,'training'])->name('training');
 Route::get('/contactus',[HomeController::class,'contactus'])->name('contactus');
 Route::get('/TOOLS/Calculator/EMIcalculator',[HomeController::class,'emicalculator'])->name('emicalculator');

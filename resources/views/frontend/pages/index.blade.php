@@ -23,19 +23,19 @@
         <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
 
             <div class="carousel-item active"
-                style="background-image: url('{{ asset('frontend/assets/img/hero-carousel/hero-carousel-1.jpg') }}');">
+                style="background-image: url('{{ asset ('frontend/assets/img/hero-carousel/hero-carousel-1.jpg') }}');">
             </div>
             <div class="carousel-item"
-                style="background-image: url('{{ asset('frontend/assets/img/hero-carousel/hero-carousel-2.jpg') }}');">
+                style="background-image: url('{{ asset ('frontend/assets/img/hero-carousel/hero-carousel-2.jpg') }}');">
             </div>
             <div class="carousel-item"
-                style="background-image: url('{{ asset('frontend/assets/img/hero-carousel/hero-carousel-3.jpg') }}');">
+                style="background-image: url('{{ asset ('frontend/assets/img/hero-carousel/hero-carousel-3.jpg') }}');">
             </div>
             <div class="carousel-item"
-                style="background-image: url('{{ asset('frontend/assets/img/hero-carousel/hero-carousel-4.jpg') }}');">
+                style="background-image: url('{{ asset ('frontend/assets/img/hero-carousel/hero-carousel-4.jpg') }}');">
             </div>
             <div class="carousel-item"
-                style="background-image: url('{{ asset('frontend/assets/img/hero-carousel/hero-carousel-5.jpg') }}');">
+                style="background-image: url('{{ asset ('frontend/assets/img/hero-carousel/hero-carousel-5.jpg') }}');">
             </div>
 
 
@@ -61,7 +61,7 @@
 
                 <div class="row justify-content-around gy-4">
                     <div class="col-lg-6 img-bg"
-                        style="background-image: url('{{ asset('frontend/assets/img/alt-services.jpg') }}');';"
+                    style="background-image: url('{{ asset('frontend/assets/img/alt-services.jpg') }}');"
                         data-aos="zoom-in" data-aos-delay="100"></div>
 
                     <div class="col-lg-5 d-flex flex-column justify-content-center">
@@ -134,8 +134,8 @@
                             <h3>FDI</h3>
                             <p>Foreign Direct Investment (FDI) involves investors from one country directly investing in
                                 another country's businesses or assets for profit.</p>
-                            <a href="service-details.html" class="readmore stretched-link">Learn more <i
-                                    class="bi bi-arrow-right"></i></a>
+                            <a href="{{route('fdi')}}" class="readmore stretched-link">Learn more 
+                                <i class="bi bi-arrow-right"></i></a>
                         </div>
                     </div><!-- End Service Item -->
 
@@ -148,8 +148,8 @@
                             <p>Accounting involves recording, analyzing, and reporting financial transactions to provide
                                 insights into an organization's financial health and facilitate decision-making processes.
                             </p>
-                            <a href="service-details.html" class="readmore stretched-link">Learn more <i
-                                    class="bi bi-arrow-right"></i></a>
+                            <a href="{{route('accounting')}}" class="readmore stretched-link">Learn more
+                                 <i class="bi bi-arrow-right"></i></a>
                         </div>
                     </div><!-- End Service Item -->
 
@@ -162,7 +162,7 @@
                             <p>Finance encompasses the management of money and assets, including investing, borrowing,
                                 budgeting, and forecasting, to optimize financial performance and achieve organizational
                                 goals.</p>
-                            <a href="service-details.html" class="readmore stretched-link">Learn more <i
+                            <a href="{{route('finance')}}" class="readmore stretched-link">Learn more <i
                                     class="bi bi-arrow-right"></i></a>
                         </div>
                     </div><!-- End Service Item -->
@@ -176,7 +176,7 @@
                             <p>Training involves the process of acquiring knowledge, skills, and competencies through
                                 structured learning activities designed to improve performance in specific areas or tasks.
                             </p>
-                            <a href="service-details.html" class="readmore stretched-link">Learn more <i
+                            <a href="{{route('training')}}" class="readmore stretched-link">Learn more <i
                                     class="bi bi-arrow-right"></i></a>
                         </div>
                     </div><!-- End Service Item -->
@@ -189,7 +189,7 @@
                             <h3>Notices</h3>
                             <p>Announcements of policy changes, meeting schedules, deadlines for submissions, updates on
                                 regulatory requirements, or notifications about internal procedures and protocols.</p>
-                            <a href="service-details.html" class="readmore stretched-link">Learn more <i
+                            <a href="{{route('notices')}}" class="readmore stretched-link">Learn more <i
                                     class="bi bi-arrow-right"></i></a>
                         </div>
                     </div><!-- End Service Item -->
@@ -203,7 +203,7 @@
                             <p>Taxation involves the imposition of charges by government authorities on individuals,
                                 businesses, or properties, typically levied to finance public expenditures and services.
                             </p>
-                            <a href="service-details.html" class="readmore stretched-link">Learn more <i
+                            <a href="{{route('taxation')}}" class="readmore stretched-link">Learn more <i
                                     class="bi bi-arrow-right"></i></a>
                         </div>
                     </div><!-- End Service Item -->
