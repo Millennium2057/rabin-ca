@@ -30,6 +30,7 @@
 
         <!-- Template Main CSS File -->
         <link href="{{asset('frontend/assets/css/main.css')}}" rel="stylesheet">
+
 </head>
 </html>
 
