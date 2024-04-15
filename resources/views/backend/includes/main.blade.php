@@ -42,8 +42,8 @@
                 </a>
             </div>
             <!--== SEARCH ==-->
-            <div class="col-md-6 col-sm-6 mob-hide">
-                <form class="app-search">
+            <div class="col-md-6 col-sm-6 mob-hide ">
+                <form class="app-search ">
                     <input type="text" placeholder="Search..." class="form-control">
                     <a href="#"><i class="fa fa-search"></i></a>
                 </form>
@@ -100,13 +100,14 @@
                                 <ul>
                                     <li><a href="admin-all-courses.html">See Acts And Rules</a>
                                     </li>
-                                    <li><a href="admin-add-courses.html">Add New Acts And Rules</a>
+                                    <li><a href="/add.ActAndRule">Add New Acts And Rules</a>
                                     </li>
 
                                 </ul>
                             </div>
                         </li>
                        
+                        <li><a href="/logout" class="collapsible-header"><i class="fa fa-book" aria-hidden="true"></i> Logout</a> </li>
                     </ul>
                 </div>
             </div>

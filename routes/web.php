@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Admin\ActsAndRulesController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,13 +31,27 @@ Route::get('/TOOLS/Calculator/TaxCalculator',[HomeController::class,'taxcalculat
 Route::get('/TOOLS/Calculator/Tax-Rates',[HomeController::class,'taxrates'])->name('taxrates');
 Route::get('/TOOLS/Calculator/Date-Calculator',[HomeController::class,'datecalculator'])->name('datecalculator');
 
+//login route
+Route::get('/login', [AuthController::class, 'login'])->name('login');
+Route::post('/login', [AuthController::class, 'loginUser'])->name('login');
+
+
 
 
 
 
 //admin route
+Route::middleware('auth')->group(function () {
 
-Route::get('/index',[AdminController::class,'index'])->name('backend.index');
+    
+Route::get('/admin',[AdminController::class,'index'])->name('admin.index');
 
 
+
+Route::get('/add.ActAndRule', [ActsAndRulesController::class, 'addActAndRules'])->name('add.ActsAndRules');
+
+//logout route
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+
+});
 
