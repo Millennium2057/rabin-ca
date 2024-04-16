@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('acts_and_rules', function (Blueprint $table) {
             $table->id();
+            $table->string('category');
+            $table->string('title');
+            $table->longText('description');
+            $table->string('image')->nullable();
+            $table->string('pdf')->nullable();
+            $table->string('link')->nullable();
             $table->timestamps();
         });
     }

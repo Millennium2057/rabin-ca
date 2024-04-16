@@ -1,6 +1,7 @@
 @extends('backend.includes.main')
 @section('content')
 
+
 <!-- Main content -->
 <section class="add-product-content">
     @if ($message = Session::get('success'))
@@ -17,22 +18,40 @@
     </div>
     @endif
     <div class="container-fluid" style="margin-top: 50px; ">
-        <form action="" method="post" enctype="multipart/form-data">
+        <form action="{{route('store.ActsAndRules')}}" method="post" enctype="multipart/form-data">
             @csrf
             <h4 class="my-3">Add Acts, Rules & Directives </h4>
-            <p class="">You can add new product here. Please Fill up the form below: </p>
+            <p class="">You can add new act, rules $directives here. Please Fill up the form below: </p>
             <hr />
-            <div class="form-group">
-                <label for="">Product name</label>
-                <input type="text" name="name" placeholder="add product  name" class="form-control">
+            <div class="form-group mb-3">
+                <div class="form-group-prepend">
+                    <label class="form-group-text" for="formGroupSelect01">Options</label>
+                </div>
+                <select class="custom-select" name="category" id="formGroupSelect01">
+                    <option selected>Acts</option>
+                    <option value="1">Rules</option>
+                    <option value="2">Directives</option>
+                </select>
             </div>
             <div class="form-group">
-                <label for="product-price">Product price</label>
-                <input type="number" id="product-price" name="price" placeholder="Enter product price" class="form-control" min="0" step="0.01" required>
+                <label for="">Title</label>
+                <input type="text" name="title" placeholder="add title" class="form-control">
             </div>
             <div class="form-group">
-                <label for="">Product image</label>
-                <input id="product" type="file" name="product_image" multiple placeholder="add product  product" class="form-control" required>
+                <label for="">Title description</label>
+                <textarea type="text" id="menubar" name="description" placeholder="add description" rows="4" class="form-control"> </textarea>
+            </div>
+            <div class="form-group">
+                <label for="">Title image</label>
+                <input id="product" type="file" name="image" multiple placeholder="add product" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="url">Enter an title URL:</label>
+                <input type="url" name="url" id="url" placeholder="https://example.com" pattern="https://.*" size="30"  />
+            </div>
+            <div class="form-group">
+                <label for="">Title PDF</label>
+                <input id="product" type="file" name="pdf" multiple placeholder="add pdf" class="form-control">
             </div>
             <div class="" id="create-product-btn">
                 <input type="submit" class="btn btn-info " value="Add product ">
@@ -48,7 +67,7 @@
         padding: 100px;
         width: 80%;
         margin-left: 250px;
-     
+
         border-radius: 10px;
     }
 
@@ -68,8 +87,21 @@
         font-weight: 600;
     }
 
+
+
+    .container-fluid .form-group {
+        color: #4c4747;
+        font-weight: 700;
+    }
+
     .container-fluid .form-group label {
         color: #4c4747;
+        font-weight: 600;
+    }
+
+    .container-fluid .form-group input {
+        color: #4c4747;
+        font-size: 15px;
         font-weight: 600;
     }
 
@@ -93,7 +125,7 @@
 </style>
 <script>
     tinymce.init({
-        selector: 'textarea#menubar',
+        selector: '#menubar',
         menubar: 'file edit view'
     });
     setTimeout(function() {

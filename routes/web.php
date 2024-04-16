@@ -49,10 +49,14 @@ Route::get('/admin',[AdminController::class,'index'])->name('admin.index');
 
 
 
-Route::get('/add.ActAndRule', [ActsAndRulesController::class, 'addActAndRules'])->name('add.ActsAndRules');
+Route::get('/add-ActAndRule', [ActsAndRulesController::class, 'addActAndRules'])->name('add.ActsAndRules');
+Route::post('/store-ActAndRule', [ActsAndRulesController::class, 'storeActAndRules'])->name('store.ActsAndRules');
+
 
 //logout route
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 });
+
+
 

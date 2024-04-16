@@ -9,5 +9,5 @@ class ActsAndRules extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['acts','rules','directive'];
+    protected $fillable = ['category','title','description','image','link','pdf'];
 }

@@ -28,6 +28,7 @@
 	<script src="js/html5shiv.js"></script>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
+    <script src="https://cdn.tiny.cloud/1/ulxwnnzwsuhe83ahjp97g6akk21ml7affz74btbvdrwze7r0/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
 </head>
 
 <body>
@@ -67,7 +68,7 @@
                     <li><a href="admin-panel-setting.html" class="waves-effect"><i class="fa fa-cogs" aria-hidden="true"></i>Admin Setting</a>
                     </li>
                     <li class="divider"></li>
-                    <li><a href="#" class="ho-dr-con-last waves-effect"><i class="fa fa-sign-in" aria-hidden="true"></i> Logout</a>
+                    <li><a href="{{route('logout')}}" class="ho-dr-con-last waves-effect"><i class="fa fa-sign-in" aria-hidden="true"></i> Logout</a>
                     </li>
                 </ul>
             </div>
@@ -100,7 +101,7 @@
                                 <ul>
                                     <li><a href="admin-all-courses.html">See Acts And Rules</a>
                                     </li>
-                                    <li><a href="/add.ActAndRule">Add New Acts And Rules</a>
+                                    <li><a href="/add-ActAndRule">Add New Acts And Rules</a>
                                     </li>
 
                                 </ul>
@@ -112,8 +113,10 @@
                 </div>
             </div>
 
-            <!--== BODY INNER CONTAINER ==-->
+         <div style=" padding-left: 55px; width: 100%;">
+               <!--== BODY INNER CONTAINER ==-->
            @yield('content')
+         </div>
         </div>
     </div>
 
