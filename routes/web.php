@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\ActsAndRulesController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\HomeController;
@@ -24,6 +25,8 @@ Route::get('/taxation',[HomeController::class,'taxation'])->name('taxation');
 Route::get('/finance',[HomeController::class,'finance'])->name('finance');
 Route::get('/otherjob',[HomeController::class,'otherjob'])->name('otherjob');
 Route::get('/CAREER/Jobs-At-Robin/Contact',[HomeController::class,'contact'])->name('contact');
+Route::post('form/Contact', [HomeController::class, 'storeContact'])->name('store.contact');
+
 Route::get('/blog',[HomeController::class,'blog'])->name('blog');
 Route::get('/blogsdetail',[HomeController::class,'blogsdetail'])->name('blogsdetail');
 Route::get('/training',[HomeController::class,'training'])->name('training');
@@ -61,6 +64,15 @@ Route::get('/delete-ActAndRule/{id}', [ActsAndRulesController::class, 'deleteAct
 //contact route
 Route::get('/show-Contact',[ContactController::class,'showContact'])->name('show.contact');
 Route::get('/view-Contact',[ContactController::class,'viewContact'])->name('view.contact');
+
+
+//blog route
+Route::get('/add-Blog', [BlogController::class, 'addBlog'])->name('add.Blog');
+Route::get('/show-Blog', [BlogController::class, 'showBlog'])->name('show.Blog');
+Route::get('/store-Blog', [BlogController::class, 'storeBlog'])->name('store.Blog');
+Route::get('/edit-Blog', [BlogController::class, 'editBlog'])->name('edit.Blog');
+Route::get('/update-Blog', [BlogController::class, 'updateBlog'])->name('update.Blog');
+Route::get('/delete-Blog', [BlogController::class, 'deleteBlog'])->name('delete.Blog');
 
 
 
