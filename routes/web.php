@@ -2,7 +2,8 @@
 
 use App\Http\Controllers\Admin\ActsAndRulesController;
 use App\Http\Controllers\Admin\AdminController;
-use App\Http\Controllers\Admin\AuthController;
+use App\Http\Controllers\Admin\ContactController;
+use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -48,9 +49,19 @@ Route::middleware('auth')->group(function () {
 Route::get('/admin',[AdminController::class,'index'])->name('admin.index');
 
 
-
+//acts, rules & directive route
 Route::get('/add-ActAndRule', [ActsAndRulesController::class, 'addActAndRules'])->name('add.ActsAndRules');
+Route::get('/show-ActAndRule', [ActsAndRulesController::class, 'showActAndRules'])->name('show.ActsAndRules');
 Route::post('/store-ActAndRule', [ActsAndRulesController::class, 'storeActAndRules'])->name('store.ActsAndRules');
+Route::get('/edit-ActAndRule/{id}', [ActsAndRulesController::class, 'editActAndRules'])->name('edit.ActsAndRules');
+Route::post('/update-ActAndRule/{id}', [ActsAndRulesController::class, 'updateActAndRules'])->name('update.ActsAndRules');
+Route::get('/delete-ActAndRule/{id}', [ActsAndRulesController::class, 'deleteActAndRules'])->name('delete.ActsAndRules');
+
+
+//contact route
+Route::get('/show-Contact',[ContactController::class,'showContact'])->name('show.contact');
+Route::get('/view-Contact',[ContactController::class,'viewContact'])->name('view.contact');
+
 
 
 //logout route

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contact;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -49,6 +50,23 @@ class HomeController extends Controller
 
     public function contact(){
         return view('frontend.pages.contact');
+    }
+
+    public function storeContact(Request $request)
+    {
+       try {
+        $storeContact = new Contact();
+        $storeContact->name = $request->name;
+        $storeContact->email = $request->email;
+        $storeContact->subject = $request->subject;
+        $storeContact->message = $request->message;
+        $storeContact->save();
+        return redirect()->back()->with('success', 'Sucessfully Added Contact:');
+       } catch (\Throwable $th) {
+        return redirect()->back()->with('error', 'Error while Adding Contact:');
+
+       }
+
     }
 
     public function otherjob(){

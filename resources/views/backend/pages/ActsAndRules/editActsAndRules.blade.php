@@ -26,7 +26,7 @@
     </div>
     @endif
     <div class="container-fluid" style="margin-top: 50px; ">
-        <form action="{{route('store.ActsAndRules')}}" method="post" enctype="multipart/form-data">
+        <form action="{{route('update.ActsAndRules', $editActsAndRules->id)}}" method="post" enctype="multipart/form-data">
             @csrf
             <h4 class="my-3">Add Acts, Rules & Directives </h4>
             <p class="">You can add new act, rules $directives here. Please Fill up the form below: </p>
@@ -36,31 +36,38 @@
                     <label class="form-group-text" for="formGroupSelect01">Options</label>
                 </div>
                 <select class="custom-select" name="category" id="formGroupSelect01">
-                    <option selected>Acts</option>
-                    <option>Rules</option>
-                    <option>Directives</option>
+                    <option value="Acts" {{ $editActsAndRules->category === 'Acts' ? 'selected' : '' }}>Acts</option>
+                    <option value="Rules" {{ $editActsAndRules->category === 'Rules' ? 'selected' : '' }}>Rules</option>
+                    <option value="Directives" {{ $editActsAndRules->category === 'Directives' ? 'selected' : '' }}>Directives</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="">Title</label>
-                <input type="text" name="title" placeholder="add title" class="form-control">
+                <input type="text" name="title" value="{{$editActsAndRules->title}}" class="form-control">
             </div>
             <div class="form-group">
                 <label for="">Title description</label>
-                <textarea type="text" id="menubar" name="description" placeholder="add description" rows="4" class="form-control"> </textarea>
+                <textarea type="text" id="menubar" name="description" placeholder="add description" rows="4" class="form-control">{{$editActsAndRules->title}}</textarea>
             </div>
+
+            @if ($editActsAndRules->image)
             <div class="form-group">
                 <label for="">Title image</label>
                 <input id="product" type="file" name="image" placeholder="add product" class="form-control">
             </div>
+            @endif
+            @if ($editActsAndRules->link)
             <div class="form-group">
                 <label for="url">Enter an title URL:</label>
-                <input type="url" name="url" id="url" placeholder="https://example.com" pattern="https://.*" size="30" />
+                <input type="url" name="url" id="url" value="{{$editActsAndRules->link}}" placeholder="https://example.com" pattern="https://.*" size="30" />
             </div>
+            @endif
+            @if ($editActsAndRules->pdf)
             <div class="form-group">
                 <label for="">Title PDF</label>
-                <input id="product" type="file" name="pdf" accept=".pdf" placeholder="add pdf" class="form-control">
+                <input id="product" type="file" name="pdf" placeholder="add pdf" class="form-control">
             </div>
+            @endif
             <div class="" id="create-product-btn">
                 <input type="submit" class="btn btn-info " value="Add product ">
             </div>

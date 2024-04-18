@@ -3,7 +3,7 @@
 
 
 <head>
-    <title>EEducation Master Template</title>
+    <title>Rabin Dhakal and Associates Admin</title>
     <!-- META TAGS -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -99,10 +99,20 @@
                         <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-book" aria-hidden="true"></i> Acts And Rules</a>
                             <div class="collapsible-body left-sub-menu">
                                 <ul>
-                                    <li><a href="admin-all-courses.html">See Acts And Rules</a>
+                                    <li><a href="/show-ActAndRule">See Acts And Rules</a>
                                     </li>
                                     <li><a href="/add-ActAndRule">Add New Acts And Rules</a>
                                     </li>
+
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-book" aria-hidden="true"></i> Contact</a>
+                            <div class="collapsible-body left-sub-menu">
+                                <ul>
+                                    <li><a href="/show-Contact">See Contacts</a>
+                                    </li>
+                                 
 
                                 </ul>
                             </div>
