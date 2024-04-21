@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contact;
+   
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Database\QueryException;
 
 class HomeController extends Controller
 {
@@ -65,14 +68,21 @@ class HomeController extends Controller
 
 
     public function storeContact(Request $request)
+
     {
         try {
-            $request->validate([
+
+            $validator = Validator::make($request->all(), [
                 'name' => 'required',
                 'email' => 'required|email',
                 'subject' => 'required',
                 'message' => 'required',
+                'g-recaptcha-response' => 'required|captcha',
             ]);
+        
+            if ($validator->fails()) {
+                return redirect()->back()->withErrors($validator)->withInput();
+            }
 
             $storeContact = new Contact();
             $storeContact->name = $request->name;
@@ -81,12 +91,14 @@ class HomeController extends Controller
             $storeContact->message = $request->message;
             $storeContact->save();
 
-            return redirect()->route('contact')->with('success', 'Contact information stored successfully.');
-        } catch (\Throwable $th) {
-            return redirect()->route('contact')->with('error', 'Error while storing contact information.');
+            return back()->with('success', 'Contact information stored successfully.');
+        } catch (QueryException $e) {
+            return back()->with('error', 'Error while storing contact information: ' . $e->getMessage());
+        } catch (\Throwable $e) {
+            return back()->with('error', 'Unexpected error while storing contact information: ' . $e->getMessage());
         }
     }
-    
+
     public function otherjob()
     {
         return view('frontend.pages.otherjob');

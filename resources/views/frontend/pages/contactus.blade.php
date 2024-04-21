@@ -17,27 +17,7 @@
 <!-- ======= Contact Section ======= -->
 <section id="contact" class="contact">
   <div class="container" data-aos="fade-up" data-aos-delay="100">
-    @if ($errors->any())
-    <div id="alert" class="alert alert-danger">
-      <ul>
-        @foreach ($errors->all() as $error)
-        <li>{{ $error }}</li>
-        @endforeach
-      </ul>
-    </div>
-    @endif
 
-    @if (session('success'))
-    <div id="alert" class="alert alert-success">
-      {{ session('success') }}
-    </div>
-    @endif
-
-    @if (session('error'))
-    <div id="alert" class="alert alert-danger">
-      {{ session('error') }}
-    </div>
-    @endif
     <div class="row gy-4">
       <div class="col-lg-6">
         <div class="info-item  d-flex flex-column justify-content-center align-items-center">
@@ -72,7 +52,29 @@
       </div><!-- End Google Maps -->
 
       <div class="col-lg-6">
+
         <form action="{{ route('store.contact') }}" method="POST" role="form" class="php-email-form">
+          @if ($errors->any())
+          <div id="alert" class="alert alert-danger">
+            <ul>
+              @foreach ($errors->all() as $error)
+              <li>{{ $error }}</li>
+              @endforeach
+            </ul>
+          </div>
+          @endif
+
+          @if (session('success'))
+          <div id="alert" class="alert alert-success">
+            {{ session('success') }}
+          </div>
+          @endif
+
+          @if (session('error'))
+          <div id="alert" class="alert alert-danger">
+            {{ session('error') }}
+          </div>
+          @endif
           @csrf
           <div class="row gy-4">
             <div class="col-lg-6 form-group">
@@ -86,8 +88,13 @@
             <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
           </div>
           <div class="form-group">
-            <textarea class="form-control" name="message" rows="5" placeholder="Message" ></textarea>
+            <textarea class="form-control" name="message" rows="5" placeholder="Message"></textarea>
           </div>
+          @error('g-recaptcha-response')
+          <span class="text-danger">{{ $message }}</span>
+          @enderror
+          <div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div>
+
           <div class="my-3">
             <div class="loading">Loading</div>
             <div class="error-message"></div>
@@ -102,6 +109,11 @@
 
   </div>
 </section>
+<script>
+  setTimeout(function() {
+    document.getElementById('alert').style.display = 'none';
+  }, 5000); // Set the delay to 5000 milliseconds (5 seconds)
+</script>
 <!-- End Contact Section -->
 
 

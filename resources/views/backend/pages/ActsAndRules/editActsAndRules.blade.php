@@ -69,7 +69,7 @@
             </div>
             @endif
             <div class="" id="create-product-btn">
-                <input type="submit" class="btn btn-info " value="Add product ">
+                <input type="submit" class="btn btn-info " value="Update Act, Rule & Directive ">
             </div>
         </form>
 

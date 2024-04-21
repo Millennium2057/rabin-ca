@@ -10,7 +10,8 @@ class BlogController extends Controller
 {
     public function showBlog()
     {
-        return view('backend.pages.Blog.showBlog');
+        $showBlog = Blog::all();
+        return view('backend.pages.Blog.showBlog', compact('showBlog'));
     }
     public function addBlog()
     {
@@ -37,7 +38,8 @@ class BlogController extends Controller
     }
     public function editBlog($id)
     {
-        return view('backend.pages.Blog.editBlog');
+        $editBlog = Blog::Find($id);
+        return view('backend.pages.Blog.editBlog', compact('editBlog'));
     }
 
     public function updateBlog(Request $request, $id)
@@ -54,7 +56,7 @@ class BlogController extends Controller
                 $storeBlogs->image = 'Images/Blog_Image/' . $imageName;
             }
             $storeBlogs->update();
-            return redirect()->back()->with('success', 'Successfully Updated Bolg:');
+            return redirect()->route('show.Blog')->with('success', 'Successfully Updated Bolg:');
         } catch (\Throwable $th) {
             return redirect()->back()->with('error', 'Error While Updating Blog:');
         }
@@ -62,7 +64,14 @@ class BlogController extends Controller
 
     public function deleteBlog($id)
     {
-        $deleteBlog = Blog::find($id);
+        try {
+            $deleteBlog = Blog::find($id);
         $deleteBlog->delete();
+        return redirect()->back()->with('success', 'Successfully Deleted Bolg:');
+        } catch (\Throwable $th) {
+            return redirect()->back()->with('error', 'Error While Deleting Blog:');
+
+        }
+
     }
 }

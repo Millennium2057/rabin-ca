@@ -23,21 +23,21 @@
     </div>
     @endif
     <div class="sb2-2-3">
-    @if($showActsAndRules->isEmpty())
-    <div style=" height:100vh; display:flex; justify-content:center;">
-        <div style="margin-top: 100px;">
-            <p>No Acts, Rules And Directives are available at the moment. Please add:</p>
-            <a style="margin-left:110px" href="/add-ActAndRule" class="btn btn-primary">Add Acts, Rules And Directives</a>
+        @if($showActsAndRules->isEmpty())
+        <div style=" height:100vh; display:flex; justify-content:center;">
+            <div style="margin-top: 100px;">
+                <p>No Acts, Rules And Directives are available at the moment. Please add:</p>
+                <a style="margin-left:110px" href="/add-ActAndRule" class="btn btn-primary">Add Acts, Rules And Directives</a>
+            </div>
         </div>
-    </div>
 
-    @else
+        @else
         <div class="row">
             <div class="col-md-12">
                 <div class="box-inn-sp">
                     <div class="inn-title">
-                        <h4>Student Details</h4>
-                        <p>All about students like name, student id, phone, email, country, city and more</p>
+                        <h4>Acts, Rules And Directives Details</h4>
+                        <p>All about Acts, Rules And Directives like title, image, pdf, link, and more</p>
                     </div>
                     <div class="tab-inn">
                         <div class="table-responsive table-desi">
@@ -85,6 +85,7 @@
         </div>
     </div>
 </div>
+
 @endif
 <style>
     a .fa.fa-trash {

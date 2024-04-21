@@ -107,6 +107,17 @@
                                 </ul>
                             </div>
                         </li>
+                        <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-book" aria-hidden="true"></i> Blogs</a>
+                            <div class="collapsible-body left-sub-menu">
+                                <ul>
+                                    <li><a href="/show-Blog">See Blogs</a>
+                                    </li>
+                                    <li><a href="/add-Blog">Add New Blogs</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </li>
                         <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-book" aria-hidden="true"></i> Contact</a>
                             <div class="collapsible-body left-sub-menu">
                                 <ul>

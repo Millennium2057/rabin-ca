@@ -63,16 +63,18 @@ Route::get('/delete-ActAndRule/{id}', [ActsAndRulesController::class, 'deleteAct
 
 //contact route
 Route::get('/show-Contact',[ContactController::class,'showContact'])->name('show.contact');
-Route::get('/view-Contact',[ContactController::class,'viewContact'])->name('view.contact');
+Route::get('/view-Contact/{id}',[ContactController::class,'viewContact'])->name('view.contact');
+Route::get('/delete-Contact/{id}',[ContactController::class,'deleteContact'])->name('delete.contact');
+
 
 
 //blog route
 Route::get('/add-Blog', [BlogController::class, 'addBlog'])->name('add.Blog');
 Route::get('/show-Blog', [BlogController::class, 'showBlog'])->name('show.Blog');
-Route::get('/store-Blog', [BlogController::class, 'storeBlog'])->name('store.Blog');
-Route::get('/edit-Blog', [BlogController::class, 'editBlog'])->name('edit.Blog');
-Route::get('/update-Blog', [BlogController::class, 'updateBlog'])->name('update.Blog');
-Route::get('/delete-Blog', [BlogController::class, 'deleteBlog'])->name('delete.Blog');
+Route::post('/store-Blog', [BlogController::class, 'storeBlog'])->name('store.Blog');
+Route::get('/edit-Blog/{id}', [BlogController::class, 'editBlog'])->name('edit.Blog');
+Route::post('/update-Blog/{id}', [BlogController::class, 'updateBlog'])->name('update.Blog');
+Route::get('/delete-Blog/{id}', [BlogController::class, 'deleteBlog'])->name('delete.Blog');
 
 
 

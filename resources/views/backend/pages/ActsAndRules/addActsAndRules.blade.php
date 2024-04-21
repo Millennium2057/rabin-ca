@@ -29,7 +29,7 @@
         <form action="{{route('store.ActsAndRules')}}" method="post" enctype="multipart/form-data">
             @csrf
             <h4 class="my-3">Add Acts, Rules & Directives </h4>
-            <p class="">You can add new act, rules $directives here. Please Fill up the form below: </p>
+            <p class="">You can add new act, rules & directives here. Please Fill up the form below: </p>
             <hr />
             <div class="form-group mb-3">
                 <div class="form-group-prepend">
@@ -62,7 +62,7 @@
                 <input id="product" type="file" name="pdf" accept=".pdf" placeholder="add pdf" class="form-control">
             </div>
             <div class="" id="create-product-btn">
-                <input type="submit" class="btn btn-info " value="Add product ">
+                <input type="submit" class="btn btn-info " value="Add Acts, Rules & Directives ">
             </div>
         </form>
 

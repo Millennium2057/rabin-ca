@@ -1,8 +1,6 @@
 @extends('backend.includes.main')
 @section('content')
-
-
-<div class="sb2-2-3">
+<div class="sb2-2">
     @if ($errors->any())
     <div id="alert" class="alert alert-danger">
         <ul>
@@ -24,156 +22,65 @@
         {{ session('error') }}
     </div>
     @endif
-    <div class="row">
-        <div class="col-md-12">
-            <div class="box-inn-sp">
-                <div class="inn-title">
-                    <h4>Student Details</h4>
-                    <p>All about students like name, student id, phone, email, country, city and more</p>
-                </div>
-                <div class="tab-inn">
-                    <div class="table-responsive table-desi">
-                        <table class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th>User</th>
-                                    <th>Name</th>
-                                    <th>Phone</th>
-                                    <th>Email</th>
-                                    <th>Country</th>
+    <div class="sb2-2-3">
+        @if($showContact->isEmpty())
+        <div style=" height:100vh; display:flex; justify-content:center;">
+            <div style="margin-top: 100px;">
+                <p>No Contacts are available at the moment:</p>
+            </div>
+        </div>
+
+        @else
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box-inn-sp">
+                    <div class="inn-title">
+                        <h4>Contact Details</h4>
+                        <p>All about students like name, student id, phone, email, country, city and more</p>
+                    </div>
+                    <div class="tab-inn">
+                        <div class="table-responsive table-desi">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
                                     <th>Id</th>
-                                    <th>Date of birth</th>
-                                    <th>Status</th>
-                                    <th>View</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><span class="list-img"><img src="images/user/1.png" alt=""></span>
-                                    </td>
-                                    <td><a href="#"><span class="list-enq-name">Marsha Hogan</span><span class="list-enq-city">Illunois, United States</span></a>
-                                    </td>
-                                    <td>+01 3214 6522</td>
-                                    <td>chadengle@dummy.com</td>
-                                    <td>united states</td>
-                                    <td>ST17241</td>
-                                    <td>03 Jun 1990</td>
-                                    <td>
-                                        <span class="label label-success">Active</span>
-                                    </td>
-                                    <td><a href="admin-student-details.html" class="ad-st-view">View</a></td>
-                                </tr>
-                                <tr>
-                                    <td><span class="list-img"><img src="images/user/2.png" alt=""></span>
-                                    </td>
-                                    <td><a href="#"><span class="list-enq-name">Lucas Caden</span><span class="list-enq-city">Illunois, United States</span></a>
-                                    </td>
-                                    <td>+01 8574 6854</td>
-                                    <td>lucas@gmail.com</td>
-                                    <td>Illinois</td>
-                                    <td>ST10231</td>
-                                    <td>16 Feb 1987</td>
-                                    <td>
-                                        <span class="label label-success">Active</span>
-                                    </td>
-                                    <td><a href="admin-student-details.html" class="ad-st-view">View</a></td>
-                                </tr>
-                                <tr>
-                                    <td><span class="list-img"><img src="images/user/4.png" alt=""></span>
-                                    </td>
-                                    <td><a href="#"><span class="list-enq-name">Ethan Oliver</span><span class="list-enq-city">Illunois, United States</span></a>
-                                    </td>
-                                    <td>+01 8574 6854</td>
-                                    <td>Ethan@gmail.com</td>
-                                    <td>Illinois</td>
-                                    <td>ST32168</td>
-                                    <td>21 Jun 1992</td>
-                                    <td>
-                                        <span class="label label-success">Active</span>
-                                    </td>
-                                    <td><a href="admin-student-details.html" class="ad-st-view">View</a></td>
-                                </tr>
-                                <tr>
-                                    <td><span class="list-img"><img src="images/user/5.png" alt=""></span>
-                                    </td>
-                                    <td><a href="#"><span class="list-enq-name">Ethan Oliver</span><span class="list-enq-city">Illunois, United States</span></a>
-                                    </td>
-                                    <td>+01 8574 6854</td>
-                                    <td>Ethan@gmail.com</td>
-                                    <td>Illinois</td>
-                                    <td>ST32168</td>
-                                    <td>21 Jun 1992</td>
-                                    <td>
-                                        <span class="label label-success">Active</span>
-                                    </td>
-                                    <td><a href="admin-student-details.html" class="ad-st-view">View</a></td>
-                                </tr>
-                                <tr>
-                                    <td><span class="list-img"><img src="images/user/1.png" alt=""></span>
-                                    </td>
-                                    <td><a href="#"><span class="list-enq-name">Marsha Hogan</span><span class="list-enq-city">Illunois, United States</span></a>
-                                    </td>
-                                    <td>+01 3214 6522</td>
-                                    <td>chadengle@dummy.com</td>
-                                    <td>united states</td>
-                                    <td>ST17241</td>
-                                    <td>03 Jun 1990</td>
-                                    <td>
-                                        <span class="label label-success">Active</span>
-                                    </td>
-                                    <td><a href="admin-student-details.html" class="ad-st-view">View</a></td>
-                                </tr>
-                                <tr>
-                                    <td><span class="list-img"><img src="images/user/2.png" alt=""></span>
-                                    </td>
-                                    <td><a href="#"><span class="list-enq-name">Lucas Caden</span><span class="list-enq-city">Illunois, United States</span></a>
-                                    </td>
-                                    <td>+01 8574 6854</td>
-                                    <td>lucas@gmail.com</td>
-                                    <td>Illinois</td>
-                                    <td>ST10231</td>
-                                    <td>16 Feb 1987</td>
-                                    <td>
-                                        <span class="label label-success">Active</span>
-                                    </td>
-                                    <td><a href="admin-student-details.html" class="ad-st-view">View</a></td>
-                                </tr>
-                                <tr>
-                                    <td><span class="list-img"><img src="images/user/4.png" alt=""></span>
-                                    </td>
-                                    <td><a href="#"><span class="list-enq-name">Ethan Oliver</span><span class="list-enq-city">Illunois, United States</span></a>
-                                    </td>
-                                    <td>+01 8574 6854</td>
-                                    <td>Ethan@gmail.com</td>
-                                    <td>Illinois</td>
-                                    <td>ST32168</td>
-                                    <td>21 Jun 1992</td>
-                                    <td>
-                                        <span class="label label-success">Active</span>
-                                    </td>
-                                    <td><a href="admin-student-details.html" class="ad-st-view">View</a></td>
-                                </tr>
-                                <tr>
-                                    <td><span class="list-img"><img src="images/user/5.png" alt=""></span>
-                                    </td>
-                                    <td><a href="#"><span class="list-enq-name">Ethan Oliver</span><span class="list-enq-city">Illunois, United States</span></a>
-                                    </td>
-                                    <td>+01 8574 6854</td>
-                                    <td>Ethan@gmail.com</td>
-                                    <td>Illinois</td>
-                                    <td>ST32168</td>
-                                    <td>21 Jun 1992</td>
-                                    <td>
-                                        <span class="label label-success">Active</span>
-                                    </td>
-                                    <td><a href="admin-student-details.html" class="ad-st-view">View</a></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                                        <th>Name</th>     
+                                        <th>Email</th>  
+                                        <th>Subject</th>
+                                        <th>Message</th>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach($showContact as $contact)
+                                    <tr>
+                                    <td>{{$contact->id}}</td>
+                                        <td><a href="#"><span class="list-enq-name">{{$contact->name}}</span><span class="list-enq-city">{{$contact->created_at->format('Y-m-d')}}</span></a>
+                                        </td>
+                                        <td>{{$contact->email}}</td>
+                                        <td>{{Str::limit($contact->subject,50)}}</td>
+                                        <td>{{Str::limit($contact->message,50)}}</td>
+
+                                        <td>
+                                         <a href="{{route('view.contact', $contact->id)}}"><span class="label label-success">View More</span></a> 
+                                        </td>
+                                        <td><a href="{{route('delete.contact', $contact->id)}}" class="ad-st-view">Delete</a></td>
+                                    </tr>
+                                 @endforeach
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<script>
+    setTimeout(function() {
+        document.getElementById('alert').style.display = 'none';
+    }, 5000); // Set the delay to 5000 milliseconds (5 seconds)
+</script>
+@endif
 @endsection

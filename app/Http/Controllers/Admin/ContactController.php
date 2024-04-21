@@ -22,7 +22,13 @@ class ContactController extends Controller
 
     public function deleteContact($id)
     {
+       try {
         $deleteContact = Contact::find($id);
         $deleteContact->delete();
+        return back()->with('success', 'Successfully Deleted Contact:');
+       } catch (\Throwable $th) {
+        return back()->with('error', 'Error While Deleting Contact:');
+
+       }
     }
 }
