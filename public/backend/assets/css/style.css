@@ -4238,11 +4238,12 @@ left: 0;
 }
 .sb2-1 {
     float: left;
-    width: 20%;
-    background: #263238;
+    width: 15%;
+    background: #002147;
     color: #fff;
     height: 100%;
-    position: absolute;
+    position: fixed;
+ 
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;

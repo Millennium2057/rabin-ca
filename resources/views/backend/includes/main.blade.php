@@ -134,12 +134,13 @@
                 </div>
             </div>
 
-         <div style=" padding-left: 55px; width: 100%;">
+       
+        </div>
+    </div>
+    <div style="">
                <!--== BODY INNER CONTAINER ==-->
            @yield('content')
          </div>
-        </div>
-    </div>
 
     <!--Import jQuery before materialize.js-->
     <!--Import jQuery before materialize.js-->

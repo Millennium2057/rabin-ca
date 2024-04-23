@@ -49,8 +49,8 @@ class ActsAndRulesController extends Controller
             if ($request->hasFile('pdf')) {
                 $pdf = $request->file('pdf');
                 $newPdfName = time() . '.' . $pdf->getClientOriginalName();
-                $pdf->move(public_path('/images/actAndRulesImages/PDF/'), $newPdfName);
-                $addActsAndRules->pdf = '/images/actAndRulesImages/PDF/' . $newPdfName;
+                $pdf->move(public_path('/pdf/actAndRulesImages/PDF/'), $newPdfName);
+                $addActsAndRules->pdf = '/pdf/actAndRulesImages/PDF/' . $newPdfName;
             }
 
             if (!$request->hasFile('image') && !$request->hasFile('pdf') && !$request->url) {
@@ -103,8 +103,8 @@ class ActsAndRulesController extends Controller
             if ($request->hasFile('pdf')) {
                 $pdf = $request->file('pdf');
                 $newPdfName = time() . '.' . $pdf->getClientOriginalName();
-                $pdf->move(public_path('/images/actAndRulesImages/PDF/'), $newPdfName);
-                $updateActsAndRules->pdf = '/images/actAndRulesImages/PDF/' . $newPdfName;
+                $pdf->move(public_path('/pdf/actAndRulesImages/PDF/'), $newPdfName);
+                $updateActsAndRules->pdf = '/pdf/actAndRulesImages/PDF/' . $newPdfName;
             }
 
             if (!$request->hasFile('image') && !$request->hasFile('pdf') && !$request->url) {

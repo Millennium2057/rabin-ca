@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
 use App\Models\Contact;
-   
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Database\QueryException;
@@ -77,10 +78,11 @@ class HomeController extends Controller
                 'email' => 'required|email',
                 'subject' => 'required',
                 'message' => 'required',
-                'g-recaptcha-response' => 'required|captcha',
+                'g-recaptcha-response' => 'required|captcha:',
             ]);
-        
+          
             if ($validator->fails()) {
+             
                 return redirect()->back()->withErrors($validator)->withInput();
             }
 
@@ -91,11 +93,9 @@ class HomeController extends Controller
             $storeContact->message = $request->message;
             $storeContact->save();
 
-            return back()->with('success', 'Contact information stored successfully.');
-        } catch (QueryException $e) {
-            return back()->with('error', 'Error while storing contact information: ' . $e->getMessage());
-        } catch (\Throwable $e) {
-            return back()->with('error', 'Unexpected error while storing contact information: ' . $e->getMessage());
+            return redirect()->route('contactus')->with('success', 'Contact succesfully added');
+        } catch (Exception $ex) {
+            return back()->with('error', 'Error while storing Contacts');
         }
     }
 
@@ -106,7 +106,8 @@ class HomeController extends Controller
 
     public function blog()
     {
-        return view('frontend.pages.blog');
+        $allBlogs = Blog::all();
+        return view('frontend.pages.blog', compact('allBlogs'));
     }
     public function blogsdetail()
     {
