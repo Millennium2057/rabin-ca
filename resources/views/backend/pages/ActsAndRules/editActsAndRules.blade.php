@@ -58,7 +58,7 @@
             @endif
             @if ($editActsAndRules->link)
             <div class="form-group">
-                <label for="url">Enter an title URL:</label>
+                <label for="url">Title <Link></Link></label>
                 <input type="url" name="url" id="url" value="{{$editActsAndRules->link}}" placeholder="https://example.com" pattern="https://.*" size="30" />
             </div>
             @endif
@@ -78,11 +78,9 @@
 
 <style>
     .add-product-content {
-        background-color: #fff;
+        background-color: #f7f7f7;
         padding: 100px;
-        width: 80%;
         margin-left: 250px;
-
         border-radius: 10px;
     }
 

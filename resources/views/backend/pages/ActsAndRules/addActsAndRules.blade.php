@@ -54,7 +54,7 @@
                 <input id="product" type="file" name="image" placeholder="add product" class="form-control">
             </div>
             <div class="form-group">
-                <label for="url">Enter an title URL:</label>
+                <label for="url">Title Link</label>
                 <input type="url" name="url" id="url" placeholder="https://example.com" pattern="https://.*" size="30" />
             </div>
             <div class="form-group">
@@ -71,11 +71,9 @@
 
 <style>
     .add-product-content {
-        background-color: #fff;
+        background-color: #f7f7f7;
         padding: 100px;
-        width: 80%;
         margin-left: 250px;
-
         border-radius: 10px;
     }
 

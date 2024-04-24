@@ -19,6 +19,13 @@ class BlogController extends Controller
     }
     public function storeBlog(Request $request)
     {
+
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'image' => 'required|image',
+
+        ]);
         try {
             $storeBlogs = new Blog();
             $storeBlogs->title = $request->title;
@@ -27,8 +34,8 @@ class BlogController extends Controller
             if ($request->hasFile('image')) {
                 $image = $request->file('image');
                 $imageName = time() . $image->getClientOriginalName();
-                $image->move(public_path('Images/Blog_Image/'), $imageName);
-                $storeBlogs->image = 'Images/Blog_Image/' . $imageName;
+                $image->move(public_path('/images/Blog_Image/'), $imageName);
+                $storeBlogs->image = '/images/Blog_Image/' . $imageName;
             }
             $storeBlogs->save();
             return redirect()->back()->with('success', 'Successfully Added Bolg:');
@@ -44,6 +51,14 @@ class BlogController extends Controller
 
     public function updateBlog(Request $request, $id)
     {
+
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+         
+
+        ]);
+
         try {
             $storeBlogs = Blog::find($id);
             $storeBlogs->title = $request->title;
@@ -52,8 +67,8 @@ class BlogController extends Controller
             if ($request->hasFile('image')) {
                 $image = $request->file('image');
                 $imageName = time() . $image->getClientOriginalName();
-                $image->move(public_path('Images/Blog_Image/'), $imageName);
-                $storeBlogs->image = 'Images/Blog_Image/' . $imageName;
+                $image->move(public_path('/images/Blog_Image/'), $imageName);
+                $storeBlogs->image = '/images/Blog_Image/' . $imageName;
             }
             $storeBlogs->update();
             return redirect()->route('show.Blog')->with('success', 'Successfully Updated Bolg:');

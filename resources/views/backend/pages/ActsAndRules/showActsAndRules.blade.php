@@ -1,6 +1,6 @@
 @extends('backend.includes.main')
 @section('content')
-<div class="sb2-2">
+<section class="add-product-content">
     @if ($errors->any())
     <div id="alert" class="alert alert-danger">
         <ul>
@@ -69,11 +69,11 @@
                                         </td>
                                         <td>{{Str::limit($actsAndRules->pdf,20)}}</td>
                                         <td>{{Str::limit($actsAndRules->link,20)}}</td>
-                                        <td>
+                                        <td style="display: grid; justify-content: center; align-items: center;">
 
                                             <a href="{{ route('edit.ActsAndRules', $actsAndRules->id) }}"> <span class="label label-success">Edit</span></a>
                                         </td>
-                                        <td><a href="{{ route('delete.ActsAndRules', $actsAndRules->id) }}" class="ad-st-view">Delete</a></td>
+                                        <td style=" justify-content: center; align-items: center;"><a href="{{ route('delete.ActsAndRules', $actsAndRules->id) }}" class="ad-st-view">Delete</a></td>
                                     </tr>
                                     @endforeach
                                 </tbody>
@@ -84,13 +84,20 @@
             </div>
         </div>
     </div>
-</div>
+</section>
 
 @endif
 <style>
     a .fa.fa-trash {
         color: red;
         margin-left: 15px;
+    }
+    .add-product-content {
+        background-color: #f7f7f7;
+        padding: 100px;
+        height: 100vh;
+        margin-left: 250px;
+        border-radius: 10px;
     }
 </style>
 <script>

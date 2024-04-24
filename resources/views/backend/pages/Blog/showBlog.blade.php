@@ -1,6 +1,6 @@
 @extends('backend.includes.main')
 @section('content')
-<div class="sb2-2">
+<section class="add-product-content">
     @if ($errors->any())
     <div id="alert" class="alert alert-danger">
         <ul>
@@ -36,8 +36,7 @@
             <div class="col-md-12">
                 <div class="box-inn-sp">
                     <div class="inn-title">
-                        <h4>Student Details</h4>
-                        <p>All about students like name, student id, phone, email, country, city and more</p>
+                        <h4>Blogs Details</h4>
                     </div>
                     <div class="tab-inn">
                         <div class="table-responsive table-desi">
@@ -80,13 +79,20 @@
             </div>
         </div>
     </div>
-</div>
+</section>
 
 @endif
 <style>
     a .fa.fa-trash {
         color: red;
         margin-left: 15px;
+    }
+    .add-product-content {
+        background-color: #f7f7f7;
+        padding: 100px;
+        height: 100vh;
+        margin-left: 250px;
+        border-radius: 10px;
     }
 </style>
 <script>

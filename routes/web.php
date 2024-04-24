@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\ActsAndRulesController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\ContactController;
+use App\Http\Controllers\Admin\TeamController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -33,7 +34,7 @@ Route::get('/contactus',[HomeController::class,'contactus'])->name('contactus');
 Route::post('store/Contact', [HomeController::class, 'storeContact'])->name('store.contact');
 
 Route::get('/blog',[HomeController::class,'blog'])->name('blog');
-Route::get('/blogsdetail',[HomeController::class,'blogsdetail'])->name('blogsdetail');
+Route::get('/blogsdetail/{id}',[HomeController::class,'blogsdetail'])->name('blogsdetail');
 Route::get('/training',[HomeController::class,'training'])->name('training');
 Route::get('/TOOLS/Calculator/EMIcalculator',[HomeController::class,'emicalculator'])->name('emicalculator');
 Route::get('/TOOLS/Calculator/TaxCalculator',[HomeController::class,'taxcalculator'])->name('taxcalculator');
@@ -80,6 +81,14 @@ Route::get('/edit-Blog/{id}', [BlogController::class, 'editBlog'])->name('edit.B
 Route::post('/update-Blog/{id}', [BlogController::class, 'updateBlog'])->name('update.Blog');
 Route::get('/delete-Blog/{id}', [BlogController::class, 'deleteBlog'])->name('delete.Blog');
 
+//teams route
+
+Route::get('/add-team', [TeamController::class, 'addTeam'])->name('add.team');
+Route::get('/show-team', [TeamController::class, 'showTeam'])->name('show.team');
+Route::post('/store-team', [TeamController::class, 'storeTeam'])->name('store.team');
+Route::get('/edit-team/{id}', [TeamController::class, 'editTeam'])->name('edit.team');
+Route::post('/update-team/{id}', [TeamController::class, 'updateTeam'])->name('update.team');
+Route::get('/delete-team/{id}', [TeamController::class, 'deleteTeam'])->name('delete.team');
 
 
 //logout route

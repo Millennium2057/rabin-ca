@@ -26,26 +26,30 @@
     </div>
     @endif
     <div class="container-fluid" style="margin-top: 50px; ">
-        <form action="{{route('update.Blog', $editBlog->id)}}" method="post" enctype="multipart/form-data">
+        <form action="{{route('update.team', $editTeam->id)}}" method="post" enctype="multipart/form-data">
             @csrf
-            <h4 class="my-3">Add Blog </h4>
-            <p class="">You can add new blog here. Please Fill up the form below: </p>
+            <h4 class="my-3">Add Team </h4>
+            <p class="">You can add new team here. Please Fill up the form below: </p>
             <hr />
           
             <div class="form-group">
-                <label for="">Title</label>
-                <input type="text" name="title" value="{{$editBlog->title}}" placeholder="add title" class="form-control">
+                <label for="">Team name</label>
+                <input type="text" name="name" value="{{$editTeam->name}}" placeholder="add team" class="form-control">
             </div>
             <div class="form-group">
-                <label for="">Title description</label>
-                <textarea type="text" id="menubar"  name="description"  placeholder="add description" rows="4" class="form-control"> {{$editBlog->description}}</textarea>
+                <label for="">Team designation</label>
+                <input type="text" name="designation" value="{{$editTeam->designation}}" placeholder="add team" class="form-control">
             </div>
             <div class="form-group">
-                <label for="">Title image</label>
+                <label for="">Team description</label>
+                <textarea type="text" id="menubar"  name="description"  placeholder="add description" rows="4" class="form-control"> {{$editTeam->description}}</textarea>
+            </div>
+            <div class="form-group">
+                <label for="">Team image</label>
                 <input id="product" type="file" name="image" placeholder="add product" class="form-control">
             </div>
             <div class="" id="create-product-btn">
-                <input type="submit" class="btn btn-info " value="Update Blog ">
+                <input type="submit" class="btn btn-info " value="Update Team ">
             </div>
         </form>
 

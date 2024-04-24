@@ -54,7 +54,7 @@
                             <h4>Blog 1</h4>
                             <p>Lorem ipsum, dolor sit amet consectetur</p>
                             <a href="{{ asset('frontend/assets/img/projects/construction-1.jpg') }}" title="Construction 1" data-gallery="portfolio-gallery-construction" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                            <a href="{{ route('blogsdetail') }}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                            <a href="{}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                         </div>
                     </div>
                 </div><!-- End Projects Item -->

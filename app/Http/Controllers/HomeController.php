@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Blog;
 use App\Models\Contact;
+use App\Models\Team;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -13,13 +14,14 @@ class HomeController extends Controller
 {
     public function index()
     {
-
-        return view('frontend.pages.index');
+        $homeBlogs = Blog::latest()->paginate(3);
+        return view('frontend.pages.index', compact('homeBlogs'));
     }
 
     public function about()
     {
-        return view('frontend.pages.about');
+        $allTeams = Team::all();
+        return view('frontend.pages.about', compact('allTeams'));
     }
 
     public function act()
@@ -109,9 +111,11 @@ class HomeController extends Controller
         $allBlogs = Blog::all();
         return view('frontend.pages.blog', compact('allBlogs'));
     }
-    public function blogsdetail()
+    public function blogsdetail($id)
     {
-        return view('frontend.pages.blogsdetail');
+
+        $singleBlog = Blog::find($id);
+        return view('frontend.pages.blogsdetail', compact('singleBlog'));
     }
     public function training()
     {

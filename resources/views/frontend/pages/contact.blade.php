@@ -89,11 +89,13 @@
           <div class="form-group">
             <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
           </div>
-          @error('g-recaptcha-response')
-          <span class="text-danger">{{ $message }}</span>
-          @enderror
-          <div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div>
-
+          <div class="captcha my-3">
+            {!! NoCaptcha::renderJs() !!}
+            {!! NoCaptcha::display() !!}
+          </div>
+          @if ($errors->has('g-recaptcha-response'))
+          <div class="alert alert-danger">{{ $errors->first('g-recaptcha-response') }}</div>
+          @endif
           <div class="my-3">
 
             <div class="error-message"></div>

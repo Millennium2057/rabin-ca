@@ -175,9 +175,10 @@
 
         <div class="row gy-5">
 
+            @foreach($allTeams as $team)
             <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="100">
                 <div class="member-img">
-                    <img src="{{asset('frontend/assets/img/team/team-1.jpg')}}" class="img-fluid" alt="">
+                    <img src="{{asset($team->image)}}" style="object-fit:fill;" class="img-fluid" alt="">
                     <div class="social">
                         <a href="#"><i class="bi bi-twitter"></i></a>
                         <a href="#"><i class="bi bi-facebook"></i></a>
@@ -186,96 +187,12 @@
                     </div>
                 </div>
                 <div class="member-info text-center">
-                    <h4>Rabin Dhakal</h4>
-                    <span>Chief Executive Officer</span>
-                    <p>Seeking and seizing opportunities, we navigate through challenges with resilience and determination, delivering exceptional results while maintaining integrity and transparency.</p>
-                </div>
+                    <h4>{{$team->name}}</h4>
+                    <span>{{$team->designation}}</span>
+                    <p>{!! $team->description !!}</p></div>
             </div><!-- End Team Member -->
-
-            <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="200">
-                <div class="member-img">
-                    <img src="{{asset('frontend/assets/img/team/team-2.jpg')}}" class="img-fluid" alt="">
-                    <div class="social">
-                        <a href="#"><i class="bi bi-twitter"></i></a>
-                        <a href="#"><i class="bi bi-facebook"></i></a>
-                        <a href="#"><i class="bi bi-instagram"></i></a>
-                        <a href="#"><i class="bi bi-linkedin"></i></a>
-                    </div>
-                </div>
-                <div class="member-info text-center">
-                    <h4>Manish Regmi</h4>
-                    <span>Product Manager</span>
-                    <p>Guided by innovation and driven by excellence, we meticulously craft products that exceed expectations, enriching experiences and inspiring growth.</p>
-                </div>
-            </div><!-- End Team Member -->
-
-            <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="300">
-                <div class="member-img">
-                    <img src="{{asset('frontend/assets/img/team/team-3.jpg')}}" class="img-fluid" alt="">
-                    <div class="social">
-                        <a href="#"><i class="bi bi-twitter"></i></a>
-                        <a href="#"><i class="bi bi-facebook"></i></a>
-                        <a href="#"><i class="bi bi-instagram"></i></a>
-                        <a href="#"><i class="bi bi-linkedin"></i></a>
-                    </div>
-                </div>
-                <div class="member-info text-center">
-                    <h4>Bineet Karki</h4>
-                    <span>Chief Technology Officer</span>
-                    <p>Pioneering progress with precision, we harness the power of technology to propel innovation forward, empowering individuals and organizations to thrive in a rapidly evolving digital landscape.</p>
-                </div>
-            </div><!-- End Team Member -->
-
-            <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="400">
-                <div class="member-img">
-                    <img src="{{asset('frontend/assets/img/team/team-3.jpg')}}" class="img-fluid" alt="">
-                    <div class="social">
-                        <a href="#"><i class="bi bi-twitter"></i></a>
-                        <a href="#"><i class="bi bi-facebook"></i></a>
-                        <a href="#"><i class="bi bi-instagram"></i></a>
-                        <a href="#"><i class="bi bi-linkedin"></i></a>
-                    </div>
-                </div>
-                <div class="member-info text-center">
-                    <h4>Amit Karki</h4>
-                    <span>Accountant</span>
-                    <p>Diligently managing finances, we ensure transparency and accuracy, enabling informed decision-making and fostering financial stability.</p>
-                </div>
-            </div><!-- End Team Member -->
-
-            <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="500">
-                <div class="member-img">
-                    <img src="{{asset('frontend/assets/img/team/team-3.jpg')}}" class="img-fluid" alt="">
-                    <div class="social">
-                        <a href="#"><i class="bi bi-twitter"></i></a>
-                        <a href="#"><i class="bi bi-facebook"></i></a>
-                        <a href="#"><i class="bi bi-instagram"></i></a>
-                        <a href="#"><i class="bi bi-linkedin"></i></a>
-                    </div>
-                </div>
-                <div class="member-info text-center">
-                    <h4>Nitesh Guragain</h4>
-                    <span>Marketing</span>
-                    <p>Strategically engaging audiences, we amplify brand presence and drive growth, leveraging insights to create impactful marketing campaigns that resonate with target audiences.</p>
-                </div>
-            </div><!-- End Team Member -->
-
-            <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="600">
-                <div class="member-img">
-                    <img src="{{asset('frontend/assets/img/team/team-3.jpg')}}" class="img-fluid" alt="">
-                    <div class="social">
-                        <a href="#"><i class="bi bi-twitter"></i></a>
-                        <a href="#"><i class="bi bi-facebook"></i></a>
-                        <a href="#"><i class="bi bi-instagram"></i></a>
-                        <a href="#"><i class="bi bi-linkedin"></i></a>
-                    </div>
-                </div>
-                <div class="member-info text-center">
-                    <h4>Sonu Dhakal</h4>
-                    <span>Operations</span>
-                    <p>Efficiently managing processes, we streamline operations and optimize workflows, ensuring seamless execution and maximizing productivity to achieve organizational objectives.</p>
-                </div>
-            </div><!-- End Team Member -->
+            @endforeach
+            <!-- End Team Member -->
 
         </div>
 

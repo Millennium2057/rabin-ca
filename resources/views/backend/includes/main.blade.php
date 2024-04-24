@@ -39,22 +39,20 @@
             <div class="col-md-2 col-sm-3 col-xs-6 sb1-1">
                 <a href="#" class="btn-close-menu"><i class="fa fa-times" aria-hidden="true"></i></a>
                 <a href="#" class="atab-menu"><i class="fa fa-bars tab-menu" aria-hidden="true"></i></a>
-                <a href="index-2.html" class="logo"><img src="{{ asset('backend/assets/images/logo1.png') }}" alt="" />
+                <a href="/admin" class="logo"><img src="{{ asset('backend/assets/images/rabin.png') }}" style="height: 50px; width: 100px; background-color: #fff; border: 5px solid #0000; border-radius: 5px; margin-top: 5px;" alt="rabin associates" />
                 </a>
             </div>
             <!--== SEARCH ==-->
             <div class="col-md-6 col-sm-6 mob-hide ">
-                <form class="app-search ">
+                <!-- <form class="app-search ">
                     <input type="text" placeholder="Search..." class="form-control">
                     <a href="#"><i class="fa fa-search"></i></a>
-                </form>
+                </form> -->
             </div>
             <!--== NOTIFICATION ==-->
             <div class="col-md-2 tab-hide">
                 <div class="top-not-cen">
-                    <a class='waves-effect btn-noti' href="admin-all-enquiry.html" title="all enquiry messages"><i class="fa fa-commenting-o" aria-hidden="true"></i><span>5</span></a>
-                    <a class='waves-effect btn-noti' href="admin-course-enquiry.html" title="course booking messages"><i class="fa fa-envelope-o" aria-hidden="true"></i><span>5</span></a>
-                    <a class='waves-effect btn-noti' href="admin-admission-enquiry.html" title="admission enquiry"><i class="fa fa-tag" aria-hidden="true"></i><span>5</span></a>
+                   
                 </div>
             </div>
             <!--== MY ACCCOUNT ==-->
@@ -85,7 +83,7 @@
                         <li><img src="{{ asset('backend/assets/images/placeholder.jpg')}}" alt="">
                         </li>
                         <li>
-                            <h5>Victoria Baker <span> Santa Ana, CA</span></h5>
+                            <h5>Rabin Associates <span> Kathmandu, Nepal</span></h5>
                         </li>
                         <li></li>
                     </ul>
@@ -93,7 +91,7 @@
                 <!--== LEFT MENU ==-->
                 <div class="sb2-13">
                     <ul class="collapsible" data-collapsible="accordion">
-                        <li><a href="admin.html" class="menu-active"><i class="fa fa-bar-chart" aria-hidden="true"></i> Dashboard</a>
+                        <li><a href="/admin" class="menu-active"><i class="fa fa-bar-chart" aria-hidden="true"></i> Dashboard</a>
                         </li>
                        
                         <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-book" aria-hidden="true"></i> Acts And Rules</a>
@@ -113,6 +111,17 @@
                                     <li><a href="/show-Blog">See Blogs</a>
                                     </li>
                                     <li><a href="/add-Blog">Add New Blogs</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-book" aria-hidden="true"></i> Teams</a>
+                            <div class="collapsible-body left-sub-menu">
+                                <ul>
+                                    <li><a href="/show-team">See Teams</a>
+                                    </li>
+                                    <li><a href="/add-team">Add New Team</a>
                                     </li>
 
                                 </ul>

@@ -2,7 +2,7 @@
 @section('content')
 
 
-<div class="sb2-2" style="height: 100vh;">
+<section class="add-product-content">
     @if ($errors->any())
     <div id="alert" class="alert alert-danger">
         <ul>
@@ -62,6 +62,15 @@
             </div>
         </div>
     </div>
-</div>
+</section>
+<style>
+     .add-product-content {
+        background-color: #f7f7f7;
+        padding: 100px;
+        height:  100vh;
+        margin-left: 250px;
+        border-radius: 10px;
+    }
+</style>
 
 @endsection

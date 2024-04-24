@@ -26,26 +26,30 @@
     </div>
     @endif
     <div class="container-fluid" style="margin-top: 50px; ">
-        <form action="{{route('update.Blog', $editBlog->id)}}" method="post" enctype="multipart/form-data">
+        <form action="{{route('store.team')}}" method="post" enctype="multipart/form-data">
             @csrf
-            <h4 class="my-3">Add Blog </h4>
-            <p class="">You can add new blog here. Please Fill up the form below: </p>
+            <h4 class="my-3">Add Team </h4>
+            <p class="">You can add new team here. Please Fill up the form below: </p>
             <hr />
-          
+
             <div class="form-group">
-                <label for="">Title</label>
-                <input type="text" name="title" value="{{$editBlog->title}}" placeholder="add title" class="form-control">
+                <label for="">Team name</label>
+                <input type="text" name="name" placeholder="add name" class="form-control">
             </div>
             <div class="form-group">
-                <label for="">Title description</label>
-                <textarea type="text" id="menubar"  name="description"  placeholder="add description" rows="4" class="form-control"> {{$editBlog->description}}</textarea>
+                <label for=""> Team designation</label>
+                <input type="text" name="designation" placeholder="add designation" class="form-control">
             </div>
             <div class="form-group">
-                <label for="">Title image</label>
+                <label for="">Team description</label>
+                <textarea type="text" id="menubar" name="description" placeholder="add description" rows="4" class="form-control"> </textarea>
+            </div>
+            <div class="form-group">
+                <label for="">Team image</label>
                 <input id="product" type="file" name="image" placeholder="add product" class="form-control">
             </div>
             <div class="" id="create-product-btn">
-                <input type="submit" class="btn btn-info " value="Update Blog ">
+                <input type="submit" class="btn btn-info " value="Add team ">
             </div>
         </form>
 
@@ -56,9 +60,7 @@
     .add-product-content {
         background-color: #f7f7f7;
         padding: 100px;
-        width: 80%;
         margin-left: 250px;
-
         border-radius: 10px;
     }
 
