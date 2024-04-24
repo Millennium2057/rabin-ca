@@ -21,7 +21,7 @@
     <link href="{{ asset('backend/assets/css/bootstrap.css') }}" rel="stylesheet" />
     <link href="{{ asset('backend/assets/css/style.css') }}" rel="stylesheet" />
     <!-- RESPONSIVE.CSS ONLY FOR MOBILE AND TABLET VIEWS -->
-    <link href="{{ asset('backend/assets/css/style-mob.css') }}" rel="stylesheet" /> 
+    <link href="{{ asset('backend/assets/css/style-mob.css') }}" rel="stylesheet" />
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -52,7 +52,7 @@
             <!--== NOTIFICATION ==-->
             <div class="col-md-2 tab-hide">
                 <div class="top-not-cen">
-                   
+
                 </div>
             </div>
             <!--== MY ACCCOUNT ==-->
@@ -93,7 +93,7 @@
                     <ul class="collapsible" data-collapsible="accordion">
                         <li><a href="/admin" class="menu-active"><i class="fa fa-bar-chart" aria-hidden="true"></i> Dashboard</a>
                         </li>
-                       
+
                         <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-book" aria-hidden="true"></i> Acts And Rules</a>
                             <div class="collapsible-body left-sub-menu">
                                 <ul>
@@ -127,29 +127,40 @@
                                 </ul>
                             </div>
                         </li>
+                        <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-book" aria-hidden="true"></i> Testimonials</a>
+                            <div class="collapsible-body left-sub-menu">
+                                <ul>
+                                    <li><a href="/show-Testimonial">See Testimonials</a>
+                                    </li>
+                                    <li><a href="/add-Testimonial">Add New Testimonial</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </li>
                         <li><a href="javascript:void(0)" class="collapsible-header"><i class="fa fa-book" aria-hidden="true"></i> Contact</a>
                             <div class="collapsible-body left-sub-menu">
                                 <ul>
                                     <li><a href="/show-Contact">See Contacts</a>
                                     </li>
-                                 
+
 
                                 </ul>
                             </div>
                         </li>
-                       
+
                         <li><a href="/logout" class="collapsible-header"><i class="fa fa-book" aria-hidden="true"></i> Logout</a> </li>
                     </ul>
                 </div>
             </div>
 
-       
+
         </div>
     </div>
     <div style="">
-               <!--== BODY INNER CONTAINER ==-->
-           @yield('content')
-         </div>
+        <!--== BODY INNER CONTAINER ==-->
+        @yield('content')
+    </div>
 
     <!--Import jQuery before materialize.js-->
     <!--Import jQuery before materialize.js-->

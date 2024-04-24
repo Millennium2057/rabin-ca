@@ -172,9 +172,8 @@
             <p>Discover the individuals who make up our team. We strive to provide you with exceptional service and expertise. Meet the talented individuals dedicated to serving you.
             </p>
         </div>
-
+        @if($allTeams->isNotEmpty())
         <div class="row gy-5">
-
             @foreach($allTeams as $team)
             <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="100">
                 <div class="member-img">
@@ -189,128 +188,61 @@
                 <div class="member-info text-center">
                     <h4>{{$team->name}}</h4>
                     <span>{{$team->designation}}</span>
-                    <p>{!! $team->description !!}</p></div>
+                    <p>{!! $team->description !!}</p>
+                </div>
             </div><!-- End Team Member -->
             @endforeach
             <!-- End Team Member -->
-
         </div>
-
+        @else
+        <div style="display: flex; justify-content: center; align-items: center;">
+            <p>Teams are not available now.</p>
+        </div>
+        @endif
     </div>
 </section><!-- End Our Team Section -->
 
 <!-- ======= Testimonials Section ======= -->
 <section id="testimonials" class="testimonials section-bg">
     <div class="container" data-aos="fade-up">
-
         <div class="section-header">
             <h2>Testimonials</h2>
-            <p>Quam sed id excepturi ccusantium dolorem ut quis dolores nisi llum nostrum enim velit qui ut et autem uia
-                reprehenderit sunt deleniti</p>
+            <p>Quam sed id excepturi ccusantium dolorem ut quis dolores nisi llum nostrum enim velit qui ut et autem uia reprehenderit sunt deleniti</p>
         </div>
-
-        <div class="slides-2 swiper">
+        @if($allTestimonials->isNotEmpty())
+        <div class="swiper-container">
             <div class="swiper-wrapper">
-
+                @foreach($allTestimonials as $testimonial)
                 <div class="swiper-slide">
                     <div class="testimonial-wrap">
                         <div class="testimonial-item">
-                            <img src="{{asset('frontend/assets/img/testimonials/testimonials-1.jpg')}}" class="testimonial-img" alt="">
-                            <h3>Manish Regmi</h3>
-                            <h4>CTO &amp; Founder</h4>
+                            <img src="{{ asset($testimonial->image) }}" class="testimonial-img" alt="">
+                            <h3>{{ $testimonial->name }}</h3>
+                            <h4>{{ $testimonial->designation }}</h4>
                             <div class="stars">
-                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                                @for($i = 0; $i < $testimonial->stars; $i++)
+                                    <i class="bi bi-star-fill"></i>
+                                    @endfor
                             </div>
                             <p>
                                 <i class="bi bi-quote quote-icon-left"></i>
-                                Rabin Dhakal & Associates provided exceptional financial insights, guiding us through
-                                complex tax matters effortlessly.
+                                {{ $testimonial->description }}
                                 <i class="bi bi-quote quote-icon-right"></i>
                             </p>
                         </div>
                     </div>
                 </div><!-- End testimonial item -->
-
-                <div class="swiper-slide">
-                    <div class="testimonial-wrap">
-                        <div class="testimonial-item">
-                            <img src="{{asset('frontend/assets/img/testimonials/testimonials-2.jpg')}}" class="testimonial-img" alt="">
-                            <h3>Hemanta Jung Karki</h3>
-                            <h4>CEO &amp; Founder</h4>
-                            <div class="stars">
-                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                            </div>
-                            <p>
-                                <i class="bi bi-quote quote-icon-left"></i>
-                                Professionalism defines Rabin Dhakal & Associates, offering strategic financial
-                                solutions tailored to our business needs.
-                                <i class="bi bi-quote quote-icon-right"></i>
-                            </p>
-                        </div>
-                    </div>
-                </div><!-- End testimonial item -->
-
-                <div class="swiper-slide">
-                    <div class="testimonial-wrap">
-                        <div class="testimonial-item">
-                            <img src="{{asset('frontend/assets/img/testimonials/testimonials-3.jpg')}}" class="testimonial-img" alt="">
-                            <h3>Amit Karki</h3>
-                            <h4>Store Owner</h4>
-                            <div class="stars">
-                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                            </div>
-                            <p>
-                                <i class="bi bi-quote quote-icon-left"></i>
-                                Impressed by Rabin Dhakal & Associates' depth of knowledge, they navigated our
-                                accounting intricacies with precision and expertise.
-                                <i class="bi bi-quote quote-icon-right"></i>
-                            </p>
-                        </div>
-                    </div>
-                </div><!-- End testimonial item -->
-
-                <div class="swiper-slide">
-                    <div class="testimonial-wrap">
-                        <div class="testimonial-item">
-                            <img src="{{asset('frontend/assets/img/testimonials/testimonials-4.jpg')}}" class="testimonial-img" alt="">
-                            <h3>Binet Karki</h3>
-                            <h4>Freelancer</h4>
-                            <div class="stars">
-                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                            </div>
-                            <p>
-                                <i class="bi bi-quote quote-icon-left"></i>
-                                Rabin Dhakal & Associates' commitment to accuracy and integrity surpassed our
-                                expectations, ensuring flawless financial management.
-                                <i class="bi bi-quote quote-icon-right"></i>
-                            </p>
-                        </div>
-                    </div>
-                </div><!-- End testimonial item -->
-
-                <div class="swiper-slide">
-                    <div class="testimonial-wrap">
-                        <div class="testimonial-item">
-                            <img src="{{asset('frontend/assets/img/testimonials/testimonials-5.jpg')}}" class="testimonial-img" alt="">
-                            <h3>Nitesh Guragain</h3>
-                            <h4>Entrepreneur</h4>
-                            <div class="stars">
-                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                            </div>
-                            <p>
-                                <i class="bi bi-quote quote-icon-left"></i>
-                                Efficient, reliable, and dedicated - Rabin Dhakal & Associates delivered unmatched
-                                accounting services, setting a new standard of excellence.
-                                <i class="bi bi-quote quote-icon-right"></i>
-                            </p>
-                        </div>
-                    </div>
-                </div><!-- End testimonial item -->
-
+                @endforeach
             </div>
             <div class="swiper-pagination"></div>
         </div>
-
+        @else
+        <div style="display: flex; justify-content: center; align-items: center;">
+            <p>Testimonials are not available now.</p>
+        </div>
+        @endif
     </div>
-</section><!-- End Testimonials Section -->
+</section>
+
+<!-- End Testimonials Section -->
 @endsection

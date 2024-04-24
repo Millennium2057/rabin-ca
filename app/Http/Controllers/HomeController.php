@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Blog;
 use App\Models\Contact;
 use App\Models\Team;
+use App\Models\Testimonial;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -14,14 +15,16 @@ class HomeController extends Controller
 {
     public function index()
     {
+        $homeTestimonials = Testimonial::all();
         $homeBlogs = Blog::latest()->paginate(3);
-        return view('frontend.pages.index', compact('homeBlogs'));
+        return view('frontend.pages.index', compact('homeBlogs','homeTestimonials'));
     }
 
     public function about()
     {
+        $allTestimonials = Testimonial::all();
         $allTeams = Team::all();
-        return view('frontend.pages.about', compact('allTeams'));
+        return view('frontend.pages.about', compact('allTeams','allTestimonials'));
     }
 
     public function act()

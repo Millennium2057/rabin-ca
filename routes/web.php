@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\TeamController;
+use App\Http\Controllers\Admin\TestimonialController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -89,6 +90,14 @@ Route::post('/store-team', [TeamController::class, 'storeTeam'])->name('store.te
 Route::get('/edit-team/{id}', [TeamController::class, 'editTeam'])->name('edit.team');
 Route::post('/update-team/{id}', [TeamController::class, 'updateTeam'])->name('update.team');
 Route::get('/delete-team/{id}', [TeamController::class, 'deleteTeam'])->name('delete.team');
+
+//testimonial route
+Route::get('/add-Testimonial', [TestimonialController::class, 'addTestimonial'])->name('add.Testimonial');
+Route::get('/show-Testimonial', [TestimonialController::class, 'showTestimonial'])->name('show.Testimonial');
+Route::post('/store-Testimonial', [TestimonialController::class, 'storeTestimonial'])->name('store.Testimonial');
+Route::get('/edit-Testimonial/{id}', [TestimonialController::class, 'editTestimonial'])->name('edit.Testimonial');
+Route::post('/update-Testimonial/{id}', [TestimonialController::class, 'updateTestimonial'])->name('update.Testimonial');
+Route::get('/delete-Testimonial/{id}', [TestimonialController::class, 'deleteTestimonial'])->name('delete.Testimonial');
 
 
 //logout route
